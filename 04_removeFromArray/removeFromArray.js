@@ -1,17 +1,18 @@
-const removeFromArray = function (arry, args) {
-    args=arguments.splice(0,1);
-    args.forEach (element => {
-        for (i = 0; i <= arry.length; i++) {
-            if (args[element] === arry[i]) {
-                arry.splice(i, 1);
+const removeFromArray = function (arry) {
+    for (let i = 1; i < arguments.length; i++) {
+        for (j = 0; j < arry.length; j++) {
+            if (arguments[i] === arry[j]) {
+                arry.splice(j, 1);
             }
         }
-    });
+    };
+    return arry;
 };
 
-testArray = [2, 6, 8, "yeh", "nah"];
+// testArray = [2, 6, 8, "yeh", "nah"];
 
-aTest = removeFromArray(testArray, 2, 4, 5, 6, 7, 8);
+// aTest = removeFromArray(testArray, 2, 7, 'nah');
+// console.log (testArray)
 
 // Do not edit below this line
 module.exports = removeFromArray;
